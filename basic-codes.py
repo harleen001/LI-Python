@@ -23,3 +23,8 @@ key=[1,2,3]
 names=["Kartik","Harleen","Imanpal"]
 dict1=dict(zip(key,names))
 print(dict1)
+
+num=6+9j
+print(type(num))
+
+print(bin(23))
