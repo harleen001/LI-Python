@@ -18,3 +18,9 @@ print(arr3)
 
 
 m=matrix(arr1) #simply making matrix out of array, with 'm' you can perform more matrices operations
+
+mx=matrix('1 2 3 ; 4 5 6 ; 7 8 9')
+print(mx)
+print(diagonal(mx)) #diagonal for that matrix
+print(mx.min())
+print(mx.max())
