@@ -10,5 +10,5 @@ update(5)
 def student(name,age): 
     print(f"{name} is {age} years old")
 
-student("kartik",22) #positional arguments
+student("kartik",22) #positional argumentsn
 student(age=22,name="harleen") #keyword arguments
