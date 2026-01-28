@@ -17,3 +17,11 @@ df
 print("---------------------------------------------------------------")
 df_sorted = df.sort_values(by='Deptno')   #sorted according to department number
 print(df_sorted)
+
+print("-------------------------------------------------------------------")
+df_sorted = df.sort_values(by='Deptno',ascending=False)    #descending order
+print(df_sorted)
+
+print("------------------------------------------------------------")
+df_sorted = df.sort_values(by=['Deptno','Ename'])
+print(df_sorted) #sort according to columns
