@@ -11,3 +11,14 @@ df=pd.DataFrame(d)
 
 ser_result=df[df["Deptno"]==10]
 print(ser_result)
+print("------------------------------------------------------")
+ser_result1=df[df["Job"]=='manager']
+print(ser_result1)
+print("--------------------------------------------------------")
+ser_result2=df[(df["Deptno"]==10) | (df["Deptno"]==20)]
+print(ser_result2)
+print("----------------------------------------------------------")
+ser_result3=df[(df["salary"]>=45000) & (df["salary"]<=65000)]
+print(ser_result3)
+#df.to_excel('SatyamEmployee.xlsx', sheet_name='Employee')
+df.to_json('SatyamEmployee.json')
