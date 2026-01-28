@@ -31,8 +31,10 @@ df1=pd.DataFrame(
     }
 
 )
-print(df1)
-print()
-print(df.merge(df1, left_on='Ename', right_on='Name'))
+print("------------------------------------------------------------")
+set=df[(df.salary >=10000) & (df.salary<=56000)]
+print(set)
+print("----------------------------------------------------------")
 
-#only shows data for pawan as it is shown in both tables and is the only common name
+a=df[df['Deptno']==20]
+print(a)
