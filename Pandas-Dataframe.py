@@ -7,3 +7,5 @@ d={'empid':pd.Series([1001,1002,1003,1004,1005,1006,1007,1008,1009,1010],index=[
    'Deptno':pd.Series([10,20,10,10,30,10,20,10,30,40],index=[1,2,3,4,5,6,7,8,9,10])}
 df=pd.DataFrame(d)
 print(df)
+
+#with indexing data added and a dataframe created
