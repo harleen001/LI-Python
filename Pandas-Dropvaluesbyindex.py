@@ -16,3 +16,8 @@ print(df)
 df = pd.DataFrame(technologies,index=indexes)
 df1 = df.drop(['r1','r2'])
 print("Drop rows from DataFrame:\n", df1)
+
+
+df = pd.DataFrame(technologies)    #drop by condition check
+df1 = df.loc[df["Discount"] >=1500 ]
+print(df1)
