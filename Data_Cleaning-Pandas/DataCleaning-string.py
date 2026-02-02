@@ -21,3 +21,21 @@ print(df.firstname)
 
 df['lastname'] = df.full_name.str.split(" ").str.get(1)   #same done with last name
 print(df.lastname)  #printing last names
+
+print(df.full_name)  #accessing full names
+
+
+#using expand
+df1 = df
+df1.full_name.str.split(" ",expand=True)
+print(df1.full_name.str.split(" ",n=1,expand=True))
+
+
+df.head(3)
+
+
+#---------------FINDING AND REPLACING A STRING---------------------------
+print(df['income.1'])
+
+df['income.1'].dtype   #checking data type
+print(df['income.1'].str.replace("$","Euro "))    #replacing
