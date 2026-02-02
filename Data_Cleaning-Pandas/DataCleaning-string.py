@@ -57,3 +57,22 @@ print(df.quote)
 
 df[df.quote.str.match('Operative')]   #matching exact string with this quote
 print(df.salary.filter(regex='18',axis=0))   #finding this '18' with exact in index
+
+
+#joining two columns
+df.firstname + df.email
+df.firstname +"_"+ df.email
+dfall = df[['firstname','email']].apply("_".join,axis=1)
+print(dfall)
+
+
+#counting strings in a column
+df.quote
+df.quote.str.count(' ') + 1   #counting number of spaces
+
+df.quote.str.split().str.len()   #get length of word in each row
+df.quote.str.split().map(len)   #get lenght of word in each row of a column
+df.quote.str.split().apply(len)
+
+
+df.quote.str.split().apply(len).value_counts()    #get the total number of counts
