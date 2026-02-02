@@ -39,3 +39,21 @@ print(df['income.1'])
 
 df['income.1'].dtype   #checking data type
 print(df['income.1'].str.replace("$","Euro "))    #replacing
+
+df.head()
+
+#finding a string expression and cleaning
+print(df.salary)
+
+print(df.salary.str.contains('19'))   #returns true and false if the string is present or not
+
+print(df[df.salary.str.contains('19')])    #gets value of entire rows
+
+df.salary.str.contains('19|17')    #checking for multiple expressions
+df.salary.str.contains('19|17',regex=True)   #checking for multiple expressions with regular expression
+
+df.salary.str.match('19')   #for finding exact match
+print(df.quote)
+
+df[df.quote.str.match('Operative')]   #matching exact string with this quote
+print(df.salary.filter(regex='18',axis=0))   #finding this '18' with exact in index
