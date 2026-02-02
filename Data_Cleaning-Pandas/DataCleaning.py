@@ -36,3 +36,18 @@ df.columns.values[7] = 'Email Address'   #renaming using selected columns
 print(df)
 
 print(df.columns)
+
+df.columns[df.columns != 'SALARY']   #selecting all columns except one column
+print(df.loc[:, df.columns != 'SALARY'].columns)   #again selecting all columns except one
+
+
+df.columns.difference(['SALARY'])    #Select Column Names Except One Using Difference
+
+df.loc[:,~df.columns.isin(['SALARY'])].columns   #negation of whole column data
+
+df.filter(like='STREET').columns   #column name that begins with word or character
+df.loc[:,df.columns.str.endswith('ame')].columns   #ends with 'ame'
+
+df.filter(regex='ame$',axis=1).columns  #same thing of ends of 'ame' here $ represents end of the string
+
+print(df.columns.values[0:4])  #column values slicing
