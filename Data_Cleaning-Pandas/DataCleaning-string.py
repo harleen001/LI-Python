@@ -12,3 +12,9 @@ print(df.columns)
 
 
 print(df.full_name)
+df.full_name.str.split(" ")   #splitting of strings
+
+df.full_name.str.split(" ").str.get(0)    #getting first part of the string after splitting
+
+df['firstname'] = df.full_name.str.split(" ").str.get(0)   #getting first name from the split
+print(df.firstname)
