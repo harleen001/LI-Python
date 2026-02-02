@@ -50,4 +50,4 @@ df.loc[:,df.columns.str.endswith('ame')].columns   #ends with 'ame'
 
 df.filter(regex='ame$',axis=1).columns  #same thing of ends of 'ame' here $ represents end of the string
 
-print(df.columns.values[0:4])  #column values slicing
+print(df.columns.values[0:4])  #column values slicing, shows its name
