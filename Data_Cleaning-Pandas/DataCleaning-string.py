@@ -18,3 +18,6 @@ df.full_name.str.split(" ").str.get(0)    #getting first part of the string afte
 
 df['firstname'] = df.full_name.str.split(" ").str.get(0)   #getting first name from the split
 print(df.firstname)
+
+df['lastname'] = df.full_name.str.split(" ").str.get(1)   #same done with last name
+print(df.lastname)  #printing last names
