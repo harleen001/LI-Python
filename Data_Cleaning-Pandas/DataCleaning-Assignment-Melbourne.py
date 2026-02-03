@@ -31,3 +31,22 @@ data[data.isnull().any(axis=1)]
 
 data.isnull().all(axis=0)  #columns having all missing values
 data.isnull().all(axis=1)  # rows having all missing values
+
+print("---------------------------------------------------------")
+checksum=data.isnull().all(axis=1).sum()   #checking sum of all null values which results to 0
+print(checksum)
+
+len(data)  #length of data
+
+#amount of percentage of missing values
+
+#percentage_of_missing_values=
+data.isnull().sum(axis=0).sort_values(ascending=False)/len(data)*100
+
+#print(percentage_of_missing_values)
+
+#selecting top 3 null value percentage
+Col = data.isnull().sum(axis=0).sort_values(ascending=False).head(3).index.values
+print(Col)
+data = data.drop(Col,axis='columns')
+print(data)
