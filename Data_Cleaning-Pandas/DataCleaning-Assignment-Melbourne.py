@@ -50,3 +50,19 @@ Col = data.isnull().sum(axis=0).sort_values(ascending=False).head(3).index.value
 print(Col)
 data = data.drop(Col,axis='columns')
 print(data)
+
+
+data.isnull().sum().sort_values(ascending=False)/len(data)*100   #again values checked
+
+print("-----------------------------------------------------------------------------")
+data[data.isnull().sum(axis=1) > 5]
+
+len(data[data.isnull().sum(axis=1) > 5])  #length checked
+data[data.isnull().sum(axis=1) > 5].shape  #shape checked
+
+len(data[data.isnull().sum(axis=1) > 5])/len(data)*100 #percentage checked
+round(len(data[data.isnull().sum(axis=1) > 5])/len(data)*100,2)  #percentage rounded off to two places
+
+
+data = data[data.isnull().sum(axis=1) <=5]   #rows less than 5 not assigned retained
+print(data) 
