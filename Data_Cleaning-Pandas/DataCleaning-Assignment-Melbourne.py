@@ -88,3 +88,12 @@ print(data)
 
 
 round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)   #AGAIN ROUNDOFF BY 2 DECIMAL PLACES
+
+#describing latitute and longitude and then putting values by mean
+data.loc[:,['Lattitude','Longtitude']].describe()
+data['Lattitude'].mean()
+
+data.loc[:,'Lattitude'].fillna(data['Lattitude'].mean(),inplace=True)
+data.loc[:,'Longtitude'].fillna(data['Longtitude'].mean(),inplace=True)
+print("-------------------------LATITUDE AND LONGITUDE INSERTED----------------------------------")
+print(data)
