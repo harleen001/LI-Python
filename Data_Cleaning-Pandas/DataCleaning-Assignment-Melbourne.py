@@ -85,3 +85,6 @@ print(data['Landsize'].describe())  #describing row of LANDSLIDE Column which ha
 
 data = data[data.Landsize.notnull()]     #shows data where landslide is not null
 print(data)
+
+
+round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)   #AGAIN ROUNDOFF BY 2 DECIMAL PLACES
