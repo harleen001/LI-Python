@@ -30,6 +30,7 @@ df_with_0 = df.fillna(0)  #filling not assigned values with 0
 df_with_0.head()
 
 
+
 #filling values with mean
 df['DURATION'].mean()
 df_with_mean = df.DURATION.fillna(df['DURATION'].mean())

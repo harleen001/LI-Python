@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 df=pd.read_csv("Bets.csv")
 print("---------------------------RAW DATA-----------------------------")
 print(df.head())
@@ -20,6 +21,11 @@ del df['Created_At']
 df= df.dropna()
 
 df['Turnover'] = "$" + df['Turnover'].astype(str)
+
+
+df.replace(0, np.nan, inplace=True)
+
+df.dropna(inplace=True)
 
 print("-------------------------------DATA AFTER CLEANING---------------------------------")
 print(df.head())
