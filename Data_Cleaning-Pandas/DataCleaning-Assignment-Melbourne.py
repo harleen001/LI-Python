@@ -66,3 +66,22 @@ round(len(data[data.isnull().sum(axis=1) > 5])/len(data)*100,2)  #percentage rou
 
 data = data[data.isnull().sum(axis=1) <=5]   #rows less than 5 not assigned retained
 print(data) 
+
+
+data.isnull().sum().sort_values(ascending=False)/len(data)*100    #percentage of missing values for each column
+
+#removing NAN Values
+print("------------------------------------------------------------------------------------------")
+data = data[data.Price.notnull()]
+print(data)
+
+
+notassignedcheck=round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)  #percentage of missing values and round off result to 2 places
+print(notassignedcheck)
+
+
+
+print(data['Landsize'].describe())  #describing row of LANDSLIDE Column which has 9.83% not assigned data
+
+data = data[data.Landsize.notnull()]     #shows data where landslide is not null
+print(data)
