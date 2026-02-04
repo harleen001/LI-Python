@@ -97,3 +97,34 @@ data.loc[:,'Lattitude'].fillna(data['Lattitude'].mean(),inplace=True)
 data.loc[:,'Longtitude'].fillna(data['Longtitude'].mean(),inplace=True)
 print("-------------------------LATITUDE AND LONGITUDE INSERTED----------------------------------")
 print(data)
+
+
+round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)  #again checking the null value
+
+data.loc[:,['Bathroom','Car']].describe() #describing bathroom and car only
+
+
+data.groupby('Car').Car.count().sort_values(ascending=False)  #sorting by car counts
+
+
+print("--------------------------------------------------------------------------------")
+col_emptiness = round(data.isnull().sum() / len(data) * 100, 2)       #CHECKS COLUMNS THAT ARE EMPTY
+print(col_emptiness)            
+
+
+data['Car'].astype('category').value_counts() #another way to count using category method
+data.loc[:,'Car'].fillna(2,inplace=True)  #fills 2 in not assigned
+
+
+data.isnull().sum().sort_values(ascending=False)   #sort values for sum of null values
+
+#same for bathroom
+data['Bathroom'].astype('category').value_counts()
+data.loc[:,'Bathroom'].fillna(1,inplace=True)
+
+
+round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)   #round off cleaning
+
+len(data)/len(OrgData)*100  #ROW RETENTION PERCENTAGE
+
+print(data)
