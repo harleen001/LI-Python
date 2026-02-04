@@ -21,3 +21,7 @@ print(data)
 
 data.replace({'temperature':99.0,'windspeed':np.nan,'event':'0'},100,inplace=True)
 print(data)
+
+print("-----------replacing with dictionary-------------------")
+data = data.replace({np.nan:69,'0':'Sunny'})
+print(data)
