@@ -136,7 +136,3 @@ print(category_performance.head(5))
 print("\nOPERATIONAL RISKS:")
 print(f"- Status Distribution:\n{status_risk}")
 print(f"- Single Order Concentration: {concentration_risk:.2f}% of total revenue comes from one order.")
-
-
-print("-------------------------------DATA AFTER CLEANING---------------------------------")
-print(df.head())
