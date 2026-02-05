@@ -35,6 +35,11 @@ district_df['district_name']=district_df['district_name'].str.upper()
 print("Account Missing Data",account_df.isna().sum())
 print("District Missing Data",district_df.isna().sum())
  
+#Fill missing values with the median of each column / IMPUTATION
+#Missing columns filled
+impute_cols = ['population', 'average_salary', 'unemployment_rate', 'num_committed_crimes']
+district_df[impute_cols] = district_df[impute_cols].fillna(district_df[impute_cols].median())
+print("District Missing Data",district_df.isna().sum())
 
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
