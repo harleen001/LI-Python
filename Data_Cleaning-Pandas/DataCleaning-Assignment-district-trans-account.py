@@ -105,6 +105,44 @@ print(all_data['amount_category'].value_counts())
 print("\nSample of amount vs amount_category:")
 print(all_data[['amount', 'amount_category']].head(10))
 
+
+
+
+
+
+
+
+
+
+
+# Ensure account_age_days exists as an integer (from previous step's timedelta)
+all_data['account_age_days'] = all_data['account_age_at_trx'].dt.days
+
+# Create 5 equal-width bins
+all_data['account_age_days_category'] = pd.cut(all_data['account_age_days'], bins=5)
+
+# Verify the categories and their counts
+print("=== Value Counts for account_age_days_category ===")
+print(all_data['account_age_days_category'].value_counts().sort_index())
+
+
+# Display first 20 rows of the relevant columns
+cols_to_show = [
+    'account_id', 'date', 'account_open_date', 
+    'account_open_year', 'account_age_days', 
+    'amount_category', 'account_age_days_category'
+]
+
+print("\n=== First 20 Rows of all_data (New Columns) ===")
+print(all_data[cols_to_show].head(20))
+
+#Equal Width: This method is perfect for understanding the spread of your data. 
+# For example, if your account ages range from 0 to 2000 days, pd.cut will 
+# create bins like (0, 400], (400, 800], etc.
+
+
+
+
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
     print(i.head())
