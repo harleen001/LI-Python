@@ -79,10 +79,31 @@ print(all_data.head())
 
 
 
-all_data['account_open_year'] = all_data['account_open_date'].dt.year
+all_data['account_open_year'] = all_data['account_open_date'].dt.year  #adding new column of account open year
 print(all_data[['account_open_date', 'account_open_year']].head())
-#adding new column of account open year
 
+
+
+
+all_data['account_age_at_trx'] = all_data['date'] - all_data['account_open_date']  #adding difference of columns
+print(all_data[['date', 'account_open_date', 'account_age_at_trx']].head())
+
+
+
+# Create 3 equal-sized bins based on the 'amount' column/(Quantile-based discretization): 
+# Divides the data into bins so that each bin has the same number of data points. 
+# This is what is meant by "equal-sized bins."
+all_data['amount_category'] = pd.qcut(all_data['amount'], 
+                                      q=3, 
+                                      labels=['low_amount', 'medium_amount', 'high_amount'])
+
+# Verify the distribution across categories
+print("Count of records per category:")
+print(all_data['amount_category'].value_counts())
+
+# Preview the mapping
+print("\nSample of amount vs amount_category:")
+print(all_data[['amount', 'amount_category']].head(10))
 
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
