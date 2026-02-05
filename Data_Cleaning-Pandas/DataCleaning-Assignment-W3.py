@@ -24,7 +24,7 @@ print(duplicates)
 # Think of them as the "black sheep" of your data—values that are unusually high 
 # or unusually low compared to the average.
 
-print("---------------------------Handling outliers-----------------------------")
+print("--------------------------- 4.Handling outliers-----------------------------")
 mean_age = df['Age'].mean()
 std_age = df['Age'].std()
 df['Z_Score'] = (df['Age'] - mean_age) / std_age
@@ -33,3 +33,16 @@ df['Z_Score'] = (df['Age'] - mean_age) / std_age
 df_no_outliers = df[df['Z_Score'].abs() <= 2]
 df_no_outliers = df_no_outliers.drop(columns='Z_Score')   # Drop the Z_Score column
 print(df_no_outliers)  # Output the result
+
+
+print("---------------------------- 5. MIN MAX FOR NORMALIZING------------------------------")
+df_normalized = (df - df.min()) / (df.max() - df.min())
+print(df_normalized)
+
+
+print("--------------------------------6. BINING VALUES USING PD CUT-------------------------")
+bins = [0, 25, 35, 100]
+labels = ['Young', 'Middle-aged', 'Old']
+df['Age_Group'] = pd.cut(df['Age'], bins=bins, labels=labels)
+print(df)
+
