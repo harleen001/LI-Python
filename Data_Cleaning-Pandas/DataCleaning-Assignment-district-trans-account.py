@@ -41,6 +41,20 @@ impute_cols = ['population', 'average_salary', 'unemployment_rate', 'num_committ
 district_df[impute_cols] = district_df[impute_cols].fillna(district_df[impute_cols].median())
 print("District Missing Data",district_df.isna().sum())
 
+
+print("Trans Missing Data",trans_df.isna().sum())
+
+
+
+#Divide the columns into numeric columns and categorical columns, then use the fillna method to fill numeric columns with -999, fill categorical columns with 'UNKNOWN'
+numeric_cols = trans_df.select_dtypes(include=['number']).columns
+categorical_cols = trans_df.select_dtypes(exclude=['number']).columns
+
+trans_df[numeric_cols] = trans_df[numeric_cols].fillna(-999) #Fill numeric columns with -999
+trans_df[categorical_cols] = trans_df[categorical_cols].fillna('UNKNOWN') #Fill categorical columns with 'UNKNOWN'
+
+
+
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
     print(i.head())
