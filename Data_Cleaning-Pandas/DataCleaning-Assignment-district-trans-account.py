@@ -54,7 +54,26 @@ trans_df[numeric_cols] = trans_df[numeric_cols].fillna(-999) #Fill numeric colum
 trans_df[categorical_cols] = trans_df[categorical_cols].fillna('UNKNOWN') #Fill categorical columns with 'UNKNOWN'
 
 
+print(district_df.describe())
 
+print("----------------------------------------LEFT JOIN----------------------------------------")
+account_district = pd.merge(account_df, district_df, on='district_id', how='left')
+print(account_district)
+
+
+
+print("-----------------------------ACCOUNT INFORMATON AND MISSING VALUE SUM------------------------------")
+print(account_district.info())
+print(account_district.isna().sum())
+
+
+
+
+print("-------------------------LEFT JOIN AND NEW ALL DATA ASSIGNED-----------------------------------")
+all_data = pd.merge(trans_df, account_district, on='account_id', how='left')
+all_data.info()
+print(all_data.isna().sum())
+print(all_data.head())
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
     print(i.head())
