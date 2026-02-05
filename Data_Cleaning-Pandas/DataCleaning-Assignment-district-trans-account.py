@@ -28,6 +28,12 @@ trans_df['date'] = pd.to_datetime(trans_df['date'])
 #Converting to uppercase
 district_df['region']=district_df['region'].str.upper()
 district_df['district_name']=district_df['district_name'].str.upper()
+
+
+
+#Checking for missing values
+print("Account Missing Data",account_df.isna().sum())
+print("District Missing Data",district_df.isna().sum())
  
 
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
