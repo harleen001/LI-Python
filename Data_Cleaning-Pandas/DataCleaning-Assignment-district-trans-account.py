@@ -23,4 +23,13 @@ for i in dfs:
 account_df['account_open_date'] = pd.to_datetime(account_df['account_open_date'])   #datatype changed with todatetime
 trans_df['date'] = pd.to_datetime(trans_df['date'])
 
+
+
+#Converting to uppercase
+district_df['region']=district_df['region'].str.upper()
+district_df['district_name']=district_df['district_name'].str.upper()
  
+
+print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
+for i in dfs:
+    print(i.head())
