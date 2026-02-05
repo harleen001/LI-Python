@@ -74,6 +74,16 @@ all_data = pd.merge(trans_df, account_district, on='account_id', how='left')
 all_data.info()
 print(all_data.isna().sum())
 print(all_data.head())
+
+
+
+
+
+all_data['account_open_year'] = all_data['account_open_date'].dt.year
+print(all_data[['account_open_date', 'account_open_year']].head())
+#adding new column of account open year
+
+
 print("-------------------------------PRINTING OUTPUT DATA--------------------------------------------")
 for i in dfs:
     print(i.head())
