@@ -1,0 +1,7 @@
+1. a launch.json file was created automatically from command line
+
+2. the debugger of chromium is interacting with vscode so the debugger of chrome is set to false
+
+3. .env file is set up to debugger as true
+
+4. from run and debug now changes can be made without closing the server
