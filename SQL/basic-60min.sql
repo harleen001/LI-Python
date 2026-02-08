@@ -35,6 +35,16 @@ Select * from bands limit 2;
 
 Select name from bands;
 
+select id as 'ID', name as 'Band_Name'
+from bands; #only alias does not actually change
+Select * from bands;
+
+#for permanent change
+ALTER TABLE bands 
+RENAME COLUMN name TO Band_Name, 
+RENAME COLUMN id TO Id;
+
+
 drop database my_new_api_db;
 
 
