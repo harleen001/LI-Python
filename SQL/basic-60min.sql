@@ -82,7 +82,10 @@ where release_year is null;
 delete from albums where id=5;
 
 
+#USING JOINS TO JOIN TWO TABLES
 
+SELECT * FROM bands
+JOIN albums ON bands.id = albums.band_id;  #band and album info combined when id's are equal
 
 drop database my_new_api_db;
 
