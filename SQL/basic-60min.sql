@@ -90,6 +90,26 @@ JOIN albums ON bands.id = albums.band_id;  #band and album info combined when id
 #inner join and join are basically same
 #left join will return everything on left here bands table no matter if it matches right or not
 
+# and in right join will show all albums even if not associated with any band
+
+#------------AGGREGATE FUNCTIONS AND GROUPING BY------------------
+
+SELECT AVG(release_year) FROM albums;
+SELECT SUM(release_year) FROM albums;
+
+SELECT band_id, COUNT(band_id) FROM albums
+group by band_id;     #tells count of each band id as frequency mapping
+
+
+
+#-----------ALIAS TABLE JOINING--------------------------
+SELECT b.Bands_Name as band_name, COUNT(a.id) as album_count
+FROM bands as b
+Left join albums as a on b.Id=a.band_id
+group by b.Id;
+
+
+
 SELECT * FROM bands
 LEFT JOIN albums ON bands.id = albums.band_id;
 
