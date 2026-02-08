@@ -87,6 +87,12 @@ delete from albums where id=5;
 SELECT * FROM bands
 JOIN albums ON bands.id = albums.band_id;  #band and album info combined when id's are equal
 
+#inner join and join are basically same
+#left join will return everything on left here bands table no matter if it matches right or not
+
+SELECT * FROM bands
+LEFT JOIN albums ON bands.id = albums.band_id;
+
 drop database my_new_api_db;
 
 use currency_tracker;
