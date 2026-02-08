@@ -63,11 +63,28 @@ set release_year = 1982
 where id =1;
 
 
+select * from albums   #conditional selection
+where release_year<2000;
+
+
+select * from albums
+where name like '%er%';   #finds anything similar to er
+
+select * from albums
+where name like '%er%' OR band_id = 2;   #multiple conditions, we can also use AND
+
+select * from albums
+where release_year between 2000 and 2018;    #check for any value in between
+
+select * from albums
+where release_year is null;
+
+delete from albums where id=5;
+
+
+
 
 drop database my_new_api_db;
-
-
-
 
 use currency_tracker;
 select * from exchange_rates;
