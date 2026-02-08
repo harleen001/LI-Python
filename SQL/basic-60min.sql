@@ -54,6 +54,16 @@ VALUES ('The number of beast',1985,1),
        ('Nightmare',2010,3),
        ('Test Album',NULL,3);      #adding values to another table
 
+select * from albums;
+select name from albums;
+   #distinct is used for unique
+   
+update albums    #updating value
+set release_year = 1982
+where id =1;
+
+
+
 drop database my_new_api_db;
 
 
