@@ -9,23 +9,24 @@ try:
     )
     cursor = db.cursor()
     
-    value = int(input("Which Rollno you want to delete : "))
+    while True:
+        value = int(input("Which Rollno you want to delete : "))
 
-
-    query = "DELETE FROM result WHERE rollno = %s"    
-    cursor.execute(query, (value,))
-    
-    db.commit()
-
-    if cursor.rowcount==0:    #becomes 1 when any deletion happens else its 0 always
-        print("Not Deleted as value to be deleted is already not present")
-        exit()
+        query = "DELETE FROM result WHERE rollno = %s"    
+        cursor.execute(query, (value,))
         
-    else:
-        print(f"Successfully deleted rollno {value}")
+        db.commit()
+
+        if cursor.rowcount == 0:
+            print("Not present! Please enter a valid Rollno.")
+    
+        else:
+            print(f"Successfully deleted rollno {value}")
+            break 
 
     cursor.execute("SELECT * FROM result")
     result = cursor.fetchall()
+    print("\nRemaining Records:")
     for row in result:
         print(row)
 
