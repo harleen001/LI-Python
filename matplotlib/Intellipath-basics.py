@@ -16,5 +16,6 @@ Data={
 df=pd.DataFrame(Data)
 
 #LINE PLOT
-plt.plot(df['Salary'])
+plt.plot(df['Salary'],color="red",marker='o',linestyle="--",linewidth=2)  #marks data as o round, linestyle can be -- : etc.
+plt.grid()
 plt.show()
