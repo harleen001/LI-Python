@@ -18,10 +18,14 @@ data=load_data()
 #creating a web app
 app=dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])  #bootstrap components
 
-app.layout = dbc.Container(      #dbc is a class which has container
+app.layout = dbc.Container(      
+
+#dbc is a class which has container
 dbc.Row([
     dbc.Col([html.H1("HealthCare Dashboard")], width=15,className="text-center my-5")
 ])
+
+#Hospital statistics row
 
 )
 
