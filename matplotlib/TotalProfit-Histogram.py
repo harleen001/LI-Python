@@ -6,7 +6,7 @@ df=pd.read_csv("company_sales_data.csv")
 print(df.head())
 
 
-plt.hist(df['total_profit'])
+plt.hist(df['total_profit'],bins=2)
 plt.title("bathingsoap sales data")
 plt.xlabel("Month Number")
 plt.ylabel("Sales unit in number")
