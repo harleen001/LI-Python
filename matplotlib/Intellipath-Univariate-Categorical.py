@@ -16,5 +16,11 @@ print(df.head())   #categorically presented data
 count=df["Dept"].value_counts()
 print(count)
 
-plt.pie(count)   #creates a pie chart
+#plt.pie(count,labels=count.index,autopct="%1.1f",explode=[0,0.1,0,0.2])    #EXPLODES OUT BY SPECIFIC DISTANCE FROM OTHERS
+
+#creates a pie chart, %1.1f is used for percentage multiplication upto 1 decimal
+
+#COUNT PLOT
+plt.bar(count.index,count)   #simple bars printed
+#plt.axis("equal") #puts pie chart in complete circle
 plt.show()
