@@ -21,6 +21,6 @@ print(count)
 #creates a pie chart, %1.1f is used for percentage multiplication upto 1 decimal
 
 #COUNT PLOT
-plt.bar(count.index,count)   #simple bars printed
+plt.bar(count.index,count, color=['green','black','red'])   #simple bars printed
 #plt.axis("equal") #puts pie chart in complete circle
 plt.show()
