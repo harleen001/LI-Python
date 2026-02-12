@@ -21,15 +21,18 @@ fig_pie = px.pie(
     batsman_filtered, values='score', names='batter',title='Top Individual Run Scorers', hole=0.4,template="plotly_white")
 fig_pie.update_traces(textinfo='value+label')
 
-fig_bar = px.bar(top_teams, x='batting_team', y='score', title='Top 5 Teams by Total Runs', text='score',color='score', color_continuous_scale='Viridis',template="plotly_white")
+fig_bar = px.bar(top_teams, x='batting_team', y='score', title='Top 5 Teams by Total Runs', text='score',color='score', 
+                 color_continuous_scale='Viridis',template="plotly_white")
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.CERULEAN])
 
 app.layout = dbc.Container([
     dbc.Row([dbc.Col(html.H1("Cricket Analytics Pro Dashboard", className="text-center text-primary mb-4 mt-4"), width=12)]),
 
-    dbc.Row([dbc.Col([dbc.Card([dbc.CardHeader("Batsman Performance (500+ Runs)"),dbc.CardBody([dcc.Graph(figure=fig_pie)])], className="shadow") ], xs=12, md=6),
-            dbc.Col([dbc.Card([dbc.CardHeader("Team Dominance"),dbc.CardBody([dcc.Graph(figure=fig_bar)])], className="shadow") ], xs=12, md=6)], className="mb-4"),], fluid=True)
+    dbc.Row([dbc.Col([dbc.Card([dbc.CardHeader("Batsman Performance (500+ Runs)"),dbc.CardBody([dcc.Graph(figure=fig_pie)])], 
+                               className="shadow") ], xs=12, md=6),
+            dbc.Col([dbc.Card([dbc.CardHeader("Team Dominance"),dbc.CardBody([dcc.Graph(figure=fig_bar)])], className="shadow") ], 
+                    xs=12, md=6)], className="mb-4"),], fluid=True)
 
 if __name__ == '__main__':
     app.run(debug=True)
