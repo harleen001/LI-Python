@@ -11,7 +11,7 @@ df_merged['batting_team'] = df_merged.apply(lambda row: row['team1'] if row['inn
 
 COLORS = ["#2c3e50", "#34495e", "#5dade2", "#aed6f1", "#16a085", "#1abc9c"]
 
-app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY]) # Professional, soft gray/white theme
+app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY]) 
 
 app.layout = dbc.Container([
     dbc.Row([
@@ -19,7 +19,7 @@ app.layout = dbc.Container([
                         className="text-center mb-4 mt-4", 
                         style={'color': '#2c3e50', 'fontWeight': 'bold'}), width=12)
     ]),
-
+    
     dbc.Row([
         dbc.Col([
             dbc.Card([
