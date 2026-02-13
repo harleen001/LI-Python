@@ -31,8 +31,6 @@ try:
     if df.empty:
         print("No data found.")
     else:
-        # 5. RESHAPE DATA (Crucial for Bar Charts)
-        # We transform the 5 columns (SubjectCode1...5) into two: 'Subject_Slot' and 'Code'
         df_melted = df.melt(
             id_vars=['Name', 'Course'], 
             value_vars=['SubjectCode1', 'SubjectCode2', 'SubjectCode3', 'SubjectCode4', 'SubjectCode5'],
@@ -40,21 +38,17 @@ try:
             value_name='Code'
         )
 
-        # 6. CREATE THE PLOTLY BAR CHART
         fig = px.bar(
             df_melted, 
-            x="Name",           # Students on the X-axis
-            y="Code",           # Subject Code value on the Y-axis
-            color="Subject_Slot", # Different color for each subject slot
-            barmode="group",    # Puts bars side-by-side (use 'stack' for stacked)
+            x="Name",      
+            y="Code",          
+            color="Subject_Slot",
+            barmode="group",   
             title="Subject Codes per Student",
             labels={"Code": "Subject ID", "Subject_Slot": "Subject No."},
-            hover_data=['Course'] # Shows the course when you hover over a bar
+            hover_data=['Course']
         )
-
-        # Optional: Force Y-axis to show integers (since subject codes are IDs)
         fig.update_layout(yaxis_type='linear')
-        
         fig.show()
 
 except mysql.connector.Error as err:
