@@ -37,7 +37,6 @@ try:
             var_name='Subject_Slot', 
             value_name='Code'
         )
-
         fig = px.bar(
             df_melted, 
             x="Name",      
