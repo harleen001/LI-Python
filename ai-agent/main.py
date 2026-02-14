@@ -17,7 +17,7 @@ class UserRequest(BaseModel):
 llm = ChatGroq(
     model="llama-3.3-70b-versatile", 
     temperature=0, 
-    groq_api_key=os.getenv("GROQ_API_KEY")
+    #groq_api_keydemooooooooooo=os.getenv("demoapi")
 )
 
 tools = [execute_sql, create_local_file]
