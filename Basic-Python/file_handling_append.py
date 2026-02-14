@@ -1,0 +1,8 @@
+filename=input("Enter First Name:")
+f=open(filename,"a")
+filecontent=input("Enter Your Line Contents:")
+f.write(filecontent)
+f.close()
+f=open(filename,"r")
+print(f.read())
+f.close()

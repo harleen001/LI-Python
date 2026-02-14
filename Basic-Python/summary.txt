@@ -1,0 +1,3 @@
+Vowels are:11
+Consonants are:24
+Whitespaces are:8

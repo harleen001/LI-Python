@@ -1,0 +1,10 @@
+filename=input("Enter First Name:")
+f=open(filename,"a")
+filecontent=input("Enter Your Line Contents:")
+f.writelines(filecontent)
+f.close()
+f=open(filename,"r")
+#print(f.readline())
+for i in f:
+    print(i)
+f.close()
