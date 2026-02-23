@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retrieve Password</title>
+</head>
+<body>
+    <h2>Reset / Retrieve Password</h2>
+    
+    {% for message in get_flashed_messages() %}
+        <p style="color: blue; font-weight: bold;">{{ message }}</p>
+    {% endfor %}
+
+    <form action="/forgot" method="POST">
+        <input type="text" name="username" placeholder="Enter Username" required><br><br>
+        <input type="text" name="hint_question" placeholder="Your Hint Question" required><br><br>
+        <input type="text" name="hint_answer" placeholder="Your Answer" required><br><br>
+        <button type="submit">Retrieve Password</button>
+    </form>
+    
+    <br>
+    <a href="{{ url_for('home') }}">Back to Sign Up</a>
+</body>
+</html>
