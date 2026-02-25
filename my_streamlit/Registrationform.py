@@ -56,5 +56,7 @@ if submit_button:
     elif mobile=="":
         st.error("Mobile Number field must not be empty")
     else:
+        st.balloons()
+        st.snow()
         st.write("Username = ",name," \nPassword = ",password," \nGender = ",gender," \nCorrespondance = ",correspondance,
              " \nMobile No = ",mobile, " \nPincode = ",pin," \nInterest = ", ", ".join(selection)," \nDate of Birth = ",dob)
