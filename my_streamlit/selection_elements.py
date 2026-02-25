@@ -70,3 +70,18 @@ start_color, end_color = st.select_slider(
     value=("red", "blue"),
 )
 st.write("You selected wavelengths between", start_color, "and", end_color)
+
+
+#select dropdown
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+)
+
+st.write("You selected:", option)
+
+#toggle on off
+on = st.toggle("Activate feature")
+
+if on:
+    st.write("Feature activated!")
