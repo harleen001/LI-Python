@@ -23,3 +23,11 @@ st.download_button(
     mime="text/csv",
     icon=":material/download:",
 )
+
+with open("random1.png", "rb") as file:
+    st.download_button(
+        label="Download image",
+        data=file,
+        file_name="random1.png",
+        mime="image/png",
+    )
