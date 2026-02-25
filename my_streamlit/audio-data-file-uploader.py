@@ -23,3 +23,20 @@ edited_df = st.data_editor(df)
 
 favorite_command = edited_df.loc[edited_df["rating"].idxmax()]["command"]
 st.markdown(f"Your favorite command is **{favorite_command}** 🎈")
+
+
+
+#uploading multiple files
+uploaded_files = st.file_uploader(
+    "Upload data", accept_multiple_files=True, type="csv"
+)
+for uploaded_file in uploaded_files:
+    df = pd.read_csv(uploaded_file)
+    st.write(df)
+
+#camera widget
+enable = st.checkbox("Enable camera")
+picture = st.camera_input("Take a picture", disabled=not enable)
+
+if picture:
+    st.image(picture)
