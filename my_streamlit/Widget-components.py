@@ -24,3 +24,5 @@ st.download_button("Download me",data="Hello kartik")
 
 #Image: st.image("abc.png",format="img/png")
 st.latex("a^3+b^3")
+
+st.snow()
