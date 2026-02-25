@@ -20,3 +20,7 @@ st.color_picker("pick color")
 st.divider()
 
 st.download_button("Download me",data="Hello kartik")
+#st.help("print")
+
+#Image: st.image("abc.png",format="img/png")
+st.latex("a^3+b^3")
