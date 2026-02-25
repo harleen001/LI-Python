@@ -26,11 +26,11 @@ with st.form("registration_form"):
     c9.text("Correspondance")
 
     c11, c12 = st.columns([1, 3])
-    mobile = c12.number_input("Mobile Number", label_visibility="collapsed")
+    mobile = c12.text_input("Mobile Number", label_visibility="collapsed")
     c11.text("Mobile")
 
     c13, c14 = st.columns([1, 3])
-    pin = c14.number_input("Pin Code", label_visibility="collapsed")
+    pin = c14.text_input("Pin Code", label_visibility="collapsed")
     c13.text("Pin Code")
 
     c15, c16 = st.columns([1, 3])
@@ -43,6 +43,18 @@ with st.form("registration_form"):
 
     submit_button = st.form_submit_button("Submit")
 
+
+
 if submit_button:
-       st.write("Username = ",name," \nPassword = ",password," \nGender = ",gender," \nCorrespondance = ",correspondance,
+    if password != password2:
+        st.text("Password mismatch")
+
+    elif name=="":
+        st.error("Username field must not be empty")  
+    elif password=="":
+        st.error("Password field must not be empty")
+    elif mobile=="":
+        st.error("Mobile Number field must not be empty")
+    else:
+        st.write("Username = ",name," \nPassword = ",password," \nGender = ",gender," \nCorrespondance = ",correspondance,
              " \nMobile No = ",mobile, " \nPincode = ",pin," \nInterest = ", ", ".join(selection)," \nDate of Birth = ",dob)
