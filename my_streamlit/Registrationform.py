@@ -8,6 +8,7 @@ with st.form("registration_form"):
     name = c2.text_input("Username", label_visibility="collapsed")
     c1.text("Username")
 
+
     c3, c4 = st.columns([1, 3])
     password = c4.text_input("Password", type="password", label_visibility="collapsed")
     c3.text("Password")
@@ -33,9 +34,8 @@ with st.form("registration_form"):
     c13.text("Pin Code")
 
     c15, c16 = st.columns([1, 3])
-    options = ["Painting", "Reading", "Singing", "Dancing"]
-    selection = c16.segmented_control("Interests", options, selection_mode="multi", label_visibility="collapsed")
     c15.text("Interests")
+    selection = c16.multiselect("Interests", ("Painting", "Reading", "Singing", "Dancing"), label_visibility="collapsed")
 
     c17, c18 = st.columns([1, 3])
     dob = c18.date_input("Date of Birth", label_visibility="collapsed")
