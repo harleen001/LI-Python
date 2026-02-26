@@ -36,3 +36,21 @@ left, middle, right = st.columns(3, vertical_alignment="bottom")
 left.text_input("Write something")
 middle.button("Click me", use_container_width=True)
 right.checkbox("Check me")
+
+#vertical alignment to create grids
+vertical_alignment = st.selectbox(
+    "Vertical alignment", ["top", "center", "bottom"], index=2
+)
+
+left, middle, right = st.columns(3, vertical_alignment=vertical_alignment)
+left.image("https://static.streamlit.io/examples/cat.jpg")
+middle.image("https://static.streamlit.io/examples/dog.jpg")
+right.image("https://static.streamlit.io/examples/owl.jpg")
+
+
+#adding border
+left, middle, right = st.columns(3, border=True)
+
+left.markdown("Lorem ipsum " * 10)
+middle.markdown("Lorem ipsum " * 5)
+right.markdown("Lorem ipsum ")
