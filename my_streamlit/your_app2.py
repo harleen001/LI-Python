@@ -7,3 +7,5 @@ def page_1():
 
 pg = st.navigation([page_1, "page_2.py"])
 pg.run()
+
+#working on streamlit
