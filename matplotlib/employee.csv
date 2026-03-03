@@ -1,0 +1,16 @@
+Empid,Ename,Job,Salary,Comm,DeptNo
+1001,Smith,Manager,49000,100,10
+1002,Blake,Clerk,35000,,30
+1003,Clark,Manager,51000,200,10
+1004,Salib,Clerk,35000,100,20
+1005,Samita,Salesman,19000,,30
+1006,King,President,91000,100,10
+1007,Hari,Clerk,21000,100,40
+1008,Pooja,Salesman,19000,200,20
+1009,Poonam,Clerk,35000,300,10
+1010,Mohit,Manager,46000,100,20
+1011,Sachin,Clerk,38000,200,10
+1012,Rohit,Salesman,21000,,30
+1013,Pooja,Clerk,25000,100,10
+1014,Gagan,Manager,41000,300,20
+1015,Poja,Clerk,41000,400,10
