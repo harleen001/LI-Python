@@ -9,8 +9,10 @@ col_ename = 'Ename'
 col_salary = 'Salary'
 col_dept = 'DeptNo'
 
+
+
 fig = px.bar(
-    df, x=col_ename, y=col_salary, color=col_dept,hover_data=['Empid', 'Comm', col_job],
+    df, x=col_ename, y=col_salary, color=col_dept,hover_data=['Empid', 'Comm', 'Job'],
     template="plotly_white"
 )
 
