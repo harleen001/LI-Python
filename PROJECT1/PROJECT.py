@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression # type: ignore
 
 st.set_page_config(page_title="Project", page_icon=":bar_chart:",layout="wide")
 cola,colb=st.columns([3,7])
@@ -19,7 +19,7 @@ show_all = st.checkbox("Show All Sections for PDF Export", value=False)
 tab1,tab2,tab3=st.tabs(['WORLD ANALYSIS','INDIA ANALYSIS','PREDICTION'])
 def tab1_content():
     
-    df = pd.read_csv("PP COUNTRY-WISE.csv")
+    df = pd.read_csv("PP-COUNTRY-WISE.csv")
     df.columns = df.columns.str.strip()
   
 
@@ -57,7 +57,7 @@ def tab1_content():
     st.plotly_chart(fig, use_container_width=True)
     st.markdown("---")
 
-    df=pd.read_csv(r'C:\Users\hp\Desktop\PROJECT\PP COUNTRY-WISE.csv')
+    df=pd.read_csv(r'D:\LI-Python\PROJECT1\PP-COUNTRY-WISE.csv')
 
     fig=px.bar(top_countries,x='Country',y='Production(thousand barrels/day)',height=500,
            template='gridon',color='Country')
