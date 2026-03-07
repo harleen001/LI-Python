@@ -3,10 +3,7 @@ from dash import dcc, html, Input, Output
 import pandas as pd
 
 states_df = pd.read_csv('merged_population_data.csv')
-
-
 app = dash.Dash(__name__)
-
 app.layout = html.Div([
     dcc.Dropdown(
         id='state-dropdown',
