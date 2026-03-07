@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+
+#in plotly you can simply use dataframe in text =
+
 st.set_page_config(layout="wide")
 
 df = pd.read_csv("superstore.csv")
