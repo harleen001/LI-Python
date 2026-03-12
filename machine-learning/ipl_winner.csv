@@ -1,19 +1,19 @@
-Year,Winner,Runner-up,Result
-2025,Royal Challengers Bengaluru,Punjab Kings,RCB won by 6 runs
-2024,Kolkata Knight Riders,Sunrisers Hyderabad,KKR won by 8 wickets
-2023,Chennai Super Kings,Gujarat Titans,CSK won by 5 wickets (DLS)
-2022,Gujarat Titans,Rajasthan Royals,GT won by 7 wickets
-2021,Chennai Super Kings,Kolkata Knight Riders,CSK won by 27 runs
-2020,Mumbai Indians,Delhi Capitals,MI won by 5 wickets
-2019,Mumbai Indians,Chennai Super Kings,MI won by 1 run
-2018,Chennai Super Kings,Sunrisers Hyderabad,CSK won by 8 wickets
-2017,Mumbai Indians,Rising Pune Supergiant,MI won by 1 run
-2016,Sunrisers Hyderabad,Royal Challengers Bangalore,SRH won by 8 runs
-2015,Mumbai Indians,Chennai Super Kings,MI won by 41 runs
-2014,Kolkata Knight Riders,Kings XI Punjab,KKR won by 3 wickets
-2013,Mumbai Indians,Chennai Super Kings,MI won by 23 runs
-2012,Kolkata Knight Riders,Chennai Super Kings,KKR won by 5 wickets
-2011,Chennai Super Kings,Royal Challengers Bangalore,CSK won by 58 runs
-2010,Chennai Super Kings,Mumbai Indians,CSK won by 22 runs
-2009,Deccan Chargers,Royal Challengers Bangalore,DC won by 6 runs
-2008,Rajasthan Royals,Chennai Super Kings,RR won by 3 wickets
+Year,Winner,Runner-up,Margin,Final Venue,Win_Percentage
+2025,RCB,PBKS,6 runs,Ahmedabad,64.20%
+2024,KKR,SRH,8 wickets,Chennai,71.40%
+2023,CSK,GT,5 wickets (DLS),Ahmedabad,64.30%
+2022,GT,RR,7 wickets,Ahmedabad,71.40%
+2021,CSK,KKR,27 runs,Dubai,64.30%
+2020,MI,DC,5 wickets,Dubai,64.30%
+2019,MI,CSK,1 run,Hyderabad,64.30%
+2018,CSK,SRH,8 wickets,Mumbai,64.30%
+2017,MI,RPS,1 run,Hyderabad,71.40%
+2016,SRH,RCB,8 runs,Bengaluru,56.30%
+2015,MI,CSK,41 runs,Kolkata,57.10%
+2014,KKR,KXIP,3 wickets,Bengaluru,64.30%
+2013,MI,CSK,23 runs,Kolkata,68.80%
+2012,KKR,CSK,5 wickets,Chennai,62.50%
+2011,CSK,RCB,58 runs,Chennai,64.30%
+2010,CSK,MI,22 runs,Mumbai,57.10%
+2009,DC,RCB,6 runs,Johannesburg,50.00%
+2008,RR,CSK,3 wickets,Mumbai,78.60%
