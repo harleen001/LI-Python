@@ -14,7 +14,7 @@ y = data['Price']
 
 model = LinearRegression()
 model.fit(X, y)
-new_house = np.array([[1400, 2, 0.03]])
+new_house = np.array([[1400, 3, 0.03]])
 predicted_price = model.predict(new_house)
 
 print(f"Predicted price of the new house: ${predicted_price[0]:,.2f}")
