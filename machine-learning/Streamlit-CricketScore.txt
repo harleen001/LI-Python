@@ -1,0 +1,9 @@
+from training  data of balls (1st,2nd, ............nth) ball
+and scores at each ball (1,2,4,6,1) etc.
+we created a LinearRegresssion() model for 12 balls ( 2 overs)
+and then this model was plotted using plotly over streamlit as a column
+while on other side of the column, a prediction of this model was carried
+out where user was given a prompt to enter comma separated values
+like 9,10,12,13 means predicting scores on 9th ball, 10th ball, 12th ball etc.
+and the best fit model for it was created/plotted in runtime and points were marked
+also a table underneath displayed the predicted scores
