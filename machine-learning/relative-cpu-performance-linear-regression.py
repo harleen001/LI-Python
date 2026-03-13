@@ -1,0 +1,12 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+
+warnings.filterwarnings('ignore')
+filename = "machine-test.csv"
+
+df = pd.read_csv(filename, header = None)
+
+print("Shape of dataframe df: {}".format(df.shape))
