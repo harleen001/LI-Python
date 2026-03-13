@@ -23,3 +23,9 @@ print(categorical)
 df['Vendor Name'].value_counts()
 print('Number of unique Model Names: ', len(df['Model Name'].unique()))
 print('Number  of instances of models: ', len(df))
+
+
+#finding numerical variables and searching them
+numerical = [col for col in df.columns if df[col].dtype!='O']
+print('There are {} numerical variables'.format(len(numerical)))
+print(numerical)
