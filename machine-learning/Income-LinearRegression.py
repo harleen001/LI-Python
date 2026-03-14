@@ -6,11 +6,10 @@ import plotly.express as px
 
 data=pd.read_csv("Income.csv")
 model = LinearRegression()
-x=data['Income'].values.reshape(-1, 1)  
+x=data['Income'].values
 y= data['Expenditure on petrol']
 model.fit(x,y)
 Prediction = model.predict(x)
-
 plt.scatter(x,y, label="Expenditure on petrol")  # Data points
 plt.plot(x, Prediction, color='Green', linestyle='--', label="Regression Line")  # Best fit line
 plt.xlabel("Income")
