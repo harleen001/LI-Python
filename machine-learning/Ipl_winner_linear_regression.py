@@ -21,7 +21,6 @@ model.fit(X, y)
 test_input = np.array([[2026, 65.0]])
 predictions = model.predict(test_input)
 
-
 def get_team_name(val):
     idx = int(np.round(val))
     idx = max(0, min(idx, len(le.classes_) - 1))

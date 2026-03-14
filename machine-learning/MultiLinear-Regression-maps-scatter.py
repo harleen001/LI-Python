@@ -12,22 +12,22 @@ z = [4.8, 0.5, 0.9, 1.5, 0.8, 4.2, 3.1, 0.1, 2.2, 1.5, 4.1, 0.7]
 
     # use the scatter function to generate a time series graph
     # specify that the color of the data point will be based on revenue (y)
-    # specify the hot color palette
+# specify the hot color palette
 plt.scatter(x, y, c = z, cmap='hot')
 
-    # also plot a color bar so user can interpret the color scale
+# also plot a color bar so user can interpret the color scale
 plt.colorbar()
 
-    # Add a title using the title function
+# Add a title using the title function
 plt.title("Home Price versus Square Footage (Color = Miles from Center City)")
 
-    # Add labels to the x and y axes by using xlabel and ylabel functions
+# Add labels to the x and y axes by using xlabel and ylabel functions
 plt.xlabel("Square Footage")
 plt.ylabel ("Home Price $000")
 
-    # Define a function to format the ticks with commas as thousands separators
+# Define a function to format the ticks with commas as thousands separators
 def format_ticks(value, tick_number):
     return f'{value:,.0f}'
 
-    # Apply the custom formatter to the x-axis
+# Apply the custom formatter to the x-axis
 plt.gca().xaxis.set_major_formatter(ticker.FuncFormatter(format_ticks))
