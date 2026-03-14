@@ -2,6 +2,7 @@ import pandas as pd
 from CustomLinearRegression import MyLinearRegression
 from CustomR import get_accuracy
 import numpy as np
+import matplotlib.pyplot as px
 
 df = pd.read_csv("Pepsi.csv")
 model = MyLinearRegression()
@@ -20,8 +21,18 @@ new_prices=model.predict(new_x)
 
 future_df = pd.DataFrame({'Year': new_x,'Actual_Price': np.nan,'Predicted_Price': new_prices})
 
+
+
 df = pd.concat([df, future_df], ignore_index=True)
 print(df.head(15))
+
+px.scatter(x,y,color='blue',label='Actual Price')
+px.xlabel("Year")
+px.ylabel("Price")
+px.plot(x,y_pred,label='Predicted Price')
+px.title("Year vs Estimated Prediction")
+px.legend()
+px.show()
 
 
 accuracy = get_accuracy(x, y, model)
