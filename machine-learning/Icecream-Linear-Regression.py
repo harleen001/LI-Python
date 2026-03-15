@@ -22,7 +22,6 @@ plt.show()
 
 newvalues=np.array([21,32,34,41,42,51]).reshape(-1, 1)
 predicted_sales = model.predict(newvalues)
-
 plt.scatter(temperature, sales, color='blue', label="Actual Sales")  
 plt.plot(temperature, predicted_sales, color='red', linestyle='--', label="Regression Line") 
 plt.xlabel("Temperature (°C)")
