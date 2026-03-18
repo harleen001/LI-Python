@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import requests
-
 url = "https://api.open-meteo.com/v1/forecast"
 params = {
     "latitude": 31.32,
