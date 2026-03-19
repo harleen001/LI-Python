@@ -39,4 +39,12 @@ sns.countplot(x='FBS', data=df)
 # Fix 5: Jointplot works fine, but good to ensure plt.show() is called at the end
 sns.jointplot(x='Thalach', y='Oldpeak', data=df, kind='hex')
 
+
+
+
+df1 = df[['Sex','BPS','Cholesterol','Thalach', 'Oldpeak']]
+g = sns.pairplot(df1, hue='Sex')
+
+
+
 plt.show()
