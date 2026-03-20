@@ -1,3 +1,5 @@
+#PCA reduces the dimensionality of the data by transforming the features into 
+# a set of uncorrelated principal components, capturing as much variance as possible.
 from sklearn.decomposition import PCA
 import pandas as pd
 import matplotlib.pyplot as plt
