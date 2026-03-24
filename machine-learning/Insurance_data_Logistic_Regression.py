@@ -10,6 +10,7 @@ X_train, X_test, y_train, y_test = train_test_split(df[['age']],df.bought_insura
 model = LogisticRegression()
 model.fit(X_train, y_train)
 y_predicted = model.predict(X_test)
+
 model.predict_proba(X_test)
 model.score(X_test,y_test)
 print(model.coef_)
