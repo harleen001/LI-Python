@@ -14,3 +14,7 @@ categorical = [var for var in df.columns if df[var].dtype=='O']
 print('There are {} categorical variables\n'.format(len(categorical)))
 
 print('The categorical variables are :', categorical)
+print(df[categorical].head())
+
+# check missing values in categorical variables
+df[categorical].isnull().sum()
