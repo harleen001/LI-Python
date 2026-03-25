@@ -18,3 +18,22 @@ print(df[categorical].head())
 
 # check missing values in categorical variables
 df[categorical].isnull().sum()
+
+
+# print categorical variables containing missing values
+
+cat1 = [var for var in categorical if df[var].isnull().sum()!=0]
+
+print(df[cat1].isnull().sum())
+
+# view frequency of categorical variables
+
+for var in categorical:
+
+    print(df[var].value_counts())
+
+# view frequency distribution of categorical variables
+import numpy as np
+for var in categorical:
+
+    print(df[var].value_counts()/np.float64(len(df)))
