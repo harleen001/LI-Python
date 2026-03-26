@@ -26,10 +26,7 @@ model.fit(X_train, y_train)
 intercept = model.intercept_[0]
 coeffs = model.coef_[0]
 
-print(f"Intercept (b): {intercept}")
-print(f"Coefficients (m1, m2, m3): {coeffs}")
-
-def sigmoid(z):
+def sigmoid(z):  #sigmoid function created
     return 1 / (1 + math.exp(-z))
 
 def loan_prediction(age, income, score): # age income and score
@@ -39,4 +36,4 @@ def loan_prediction(age, income, score): # age income and score
 
 test_prob = loan_prediction(22, 71000, 561)
 print(f"\nProbability of Loan Status 1: {test_prob:.4f}")
-print("Result:", "Approved/Status 1" if test_prob > 0.5 else "Rejected/Status 0")
+print("Result:", "Loan Approved" if test_prob > 0.5 else "Loan Rejected")
