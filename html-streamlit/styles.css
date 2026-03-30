@@ -1,0 +1,25 @@
+/* Container styling */
+.main {
+    background-color: #f0f2f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Styling the Text Input label */
+.stTextInput label {
+    color: #4F8BF9;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Styling the Input Box itself */
+.stTextInput input {
+    border: 2px solid #4F8BF9 !important;
+    border-radius: 10px !important;
+    padding: 10px !important;
+}
+
+/* Adding a hover effect to the input */
+.stTextInput input:focus {
+    border-color: #ff4b4b !important;
+    box-shadow: 0 0 10px rgba(255, 75, 75, 0.2) !important;
+}
