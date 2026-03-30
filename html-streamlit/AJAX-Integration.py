@@ -1,43 +1,58 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.title("AJAX-style Integration")
+st.subheader("Real-Time AJAX Integration")
 
-# 1. Define the HTML "Frontend"
-# This acts like the AJAX sender
-ajax_html = """
+# 1. Get the current text from the URL
+user_input = st.query_params.get("text", "")
+
+# 2. HTML Frontend with 'input' event
+ajax_html = f"""
 <div style="background: #262730; padding: 20px; border-radius: 10px; border: 1px solid #444;">
-    <label style="color: white; font-family: sans-serif;">Type something (AJAX style):</label><br><br>
-    <input type="text" id="userInput" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #555;">
-    <p style="color: #888; font-size: 0.8rem; margin-top: 10px;">Data is sent to Python on every keystroke.</p>
+    <input type="text" id="userInput" value="{user_input}" 
+           style="width: 100%; padding: 10px; border-radius: 5px; font-size: 1.1rem;" 
+           placeholder="Type something...">
 </div>
 
 <script>
     const input = document.getElementById('userInput');
     
-    input.addEventListener('input', (e) => {
-        // This is our 'AJAX' call to the Streamlit Parent
-        window.parent.postMessage({
-            type: 'streamlit:setComponentValue',
-            value: e.target.value
-        }, '*');
-    });
+    // Auto-focus and keep cursor at the end
+    input.focus();
+    input.setSelectionRange(input.value.length, input.value.length);
+
+    input.addEventListener('input', (e) => {{
+        const val = e.target.value;
+        const url = new URL(window.top.location);
+        url.searchParams.set('text', val);
+        
+        // Update URL silently
+        window.top.history.replaceState({{}}, '', url);
+        
+        // Tell Streamlit to rerun. 
+        // We use a small delay or window.parent.postMessage if available
+        // For this simple version, location.reload is the bridge.
+        window.top.location.reload(); 
+    }});
 </script>
 """
 
-# 2. Render the component and capture the return value
-# In Streamlit, this variable 'captured_value' updates whenever postMessage is called
-captured_value = components.html(ajax_html, height=150)
+components.html(ajax_html, height=120)
 
 st.divider()
 
-# 3. Python "Backend" Logic
-if captured_value:
-    st.subheader("Python received this in real-time:")
-    st.code(captured_value)
+# 3. Python Results
+if user_input:
+    st.write("### Python is processing...")
     
-    # Example of Python doing work on the 'AJAX' data
-    word_count = len(captured_value.split())
-    st.write(f"Word count calculated by Python: **{word_count}**")
+    # Show uppercase version in real-time
+    st.info(f"**Uppercase:** {user_input.upper()}")
+    
+    # Word count
+    words = user_input.split()
+    st.metric("Live Word Count", len(words))
+    
+    # Character count
+    st.metric("Live Character Count", len(user_input))
 else:
-    st.info("Start typing in the HTML box above!")
+    st.warning("Start typing to see Python work in real-time!")
