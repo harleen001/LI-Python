@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(layout="centered")
-st.title("🎮 RPG Health Bar Sync")
+st.title("RPG Health Bar Sync")
 
 # 1. Get the current text from the URL (Our State)
 user_text = st.query_params.get("msg", "")
