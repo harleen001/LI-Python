@@ -4,23 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* Embedding the CSS directly so the iframe can see it */
+        table {
+            color: white; 
+            font-family: sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #444; 
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333; /* Darker header for contrast */
+        }
+    </style>
 </head>
 <body>
     <table>
-   <thead>
-       <th>Col1</th> 
-       <th> Col2</th> 
-
-
-   </thead>
-   <tbody>
-   {% for i in data -%}
-     <tr>
-       <td>{{i[0]}}</td> 
-       <td>{{i[1]}}</td>
-     </tr>
-   {% endfor -%}
-   </tbody>
- </table>
+        <thead>
+            <tr>
+                <th>Col1</th> 
+                <th>Col2</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data -%}
+            <tr>
+                <td>{{i[0]}}</td> 
+                <td>{{i[1]}}</td>
+            </tr>
+            {% endfor -%}
+        </tbody>
+    </table>
 </body>
 </html>

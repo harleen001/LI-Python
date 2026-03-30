@@ -2,7 +2,7 @@ from jinja2 import Template
 import streamlit.components.v1 as components
 
 def render_table(data):
-    with open("templates/table.html") as table_file:
+    with open("table.html") as table_file:
         template = Template(table_file.read())
         return template.render(data=data)
 

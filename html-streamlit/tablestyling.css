@@ -1,0 +1,13 @@
+
+    /* This makes the text white and centers the table */
+    table {
+        color: white; 
+        font-family: sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid #444; /* Optional: adds subtle borders */
+        padding: 8px;
+        text-align: left;
+    }
