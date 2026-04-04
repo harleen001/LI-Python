@@ -31,16 +31,15 @@ lr = LinearRegression()
 
 lr.fit(X_train, y_train)
 
-print(lr.coef_)
-print(lr.intercept_)
+lr.coef_
+lr.intercept_
+
 
 #predicting value of home and test
 X_test[0, :]
-
 lr.predict([X_test[0, :]])
 lr.predict(X_test)
 y_test
-
 lr.score(X_test, y_test)
 
 from sklearn.linear_model import Ridge, Lasso
@@ -50,22 +49,20 @@ rd.fit(X_train,y_train)
 rd.score(X_test, y_test)
 
 ls = Lasso()
-
 ls.fit(X_train,y_train)
-
-ls.score(X_test, y_test)
+accuracy=ls.score(X_test, y_test)
+print(f'Accuracy of model 1 = {accuracy}')
 rd2 = Ridge(alpha = 2)
-
 rd2.fit(X_train,y_train)
-
 rd2.score(X_test, y_test)
+
 ls2 = Lasso(alpha=2)
-
 ls2.fit(X_train,y_train)
+accuracy2=ls2.score(X_test, y_test)
+print(f'Accuracy of model 1 = {accuracy2}')
 
-ls2.score(X_test, y_test)
+
 ls3 = Lasso(alpha=3)
-
 ls3.fit(X_train,y_train)
-
-ls3.score(X_test, y_test)
+accuracy3=ls3.score(X_test, y_test)
+print(f'Accuracy of model 1 = {accuracy3}')
