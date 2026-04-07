@@ -7,12 +7,12 @@ import warnings
 # Suppress warnings for cleaner output
 warnings.filterwarnings('ignore')
 
-# 1. Load dataset (using the relative path from your project root)
+# 1. Load dataset (Handling potential path issues)
 try:
     data = 'machine-learning/pulsar_stars.csv'
     df = pd.read_csv(data)
 except FileNotFoundError:
-    data = 'pulsar_stars.csv'  # Fallback if run from inside the folder
+    data = 'pulsar_stars.csv'
     df = pd.read_csv(data)
 
 # 2. Data Cleaning: Strip spaces and rename columns
@@ -20,31 +20,26 @@ df.columns = df.columns.str.strip()
 df.columns = ['IP Mean', 'IP Sd', 'IP Kurtosis', 'IP Skewness', 
               'DM-SNR Mean', 'DM-SNR Sd', 'DM-SNR Kurtosis', 'DM-SNR Skewness', 'target_class']
 
-# 3. Data Inspection
+# 3. Data Inspection & Stats
 print(f"Dataset Shape: {df.shape}\n")
-print("--- First 5 Rows ---")
-print(df.head(), "\n")
-
 print("--- Target Class Distribution ---")
-# Fixed np.float error by using standard len()
+# Fix: Using standard len() instead of np.float to avoid AttributeError
 print(df['target_class'].value_counts() / len(df), "\n")
-
-print("--- Missing Values ---")
-print(df.isnull().sum(), "\n")
 
 print("--- Summary Statistics ---")
 print(round(df.describe(), 2))
 
-# 4. Visualization: Outlier detection using Boxplots
+
+# 5. Visualization Section B: Histograms (Distribution Check)
 plt.figure(figsize=(24, 20))
 
-columns_to_plot = df.columns[:-1] # All columns except target_class
-
-for i, col in enumerate(columns_to_plot, 1):
+# Loop through features to create histograms
+for i, col in enumerate(df.columns[:-1], 1):
     plt.subplot(4, 2, i)
-    df.boxplot(column=col)
-    plt.title(f'Boxplot of {col}')
-    plt.ylabel('Value')
+    fig = df[col].hist(bins=20, color='skyblue', edgecolor='black')
+    fig.set_title(f'Distribution of {col}')
+    fig.set_xlabel(col)
+    fig.set_ylabel('Number of pulsar stars')
 
 plt.tight_layout()
 plt.show()
