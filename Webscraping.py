@@ -68,3 +68,8 @@ print(out)
 print("---------------------PRINT ALL LI------------------------")
 abc=soup.find_all("li")
 print(abc)
+
+print("--------------------FINDING ALL PREVIOUS ELEMENTS--------------------")
+out = soup.ul.find_all_previous()
+print(type(out))
+out[:5]
