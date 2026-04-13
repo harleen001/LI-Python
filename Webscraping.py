@@ -72,4 +72,19 @@ print(abc)
 print("--------------------FINDING ALL PREVIOUS ELEMENTS--------------------")
 out = soup.ul.find_all_previous()
 print(type(out))
-out[:5]
+print(out[:5])
+
+print("-------------------FINDING PARENT----------------------")
+print(soup.li.find_parent())
+
+
+print("-----------------FINDING ALL NEXT SIBLINGS/ALSO PREVIOUS")
+print(soup.p.find_next_siblings(name="p"))
+
+print("--------------PREVIOUS ONES-----------------")
+print(soup.find(id="end").find_previous_sibling())
+
+
+print("-------Find All Previous Siblings of Given HTML Tag-------")
+print("------ALL PREVIOUS SIBLINGS OF PARAGRAPH--------")
+print(soup.find(id="end").find_previous_siblings(name="p"))
