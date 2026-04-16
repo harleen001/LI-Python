@@ -1,0 +1,16 @@
+2026-04-16 12:24:04,637 - INFO - Starting Fetch Stage...
+2026-04-16 12:24:07,225 - INFO - Scraped 10 items successfully.
+2026-04-16 12:24:07,226 - INFO - Processing Record 0: Albert Einstein
+2026-04-16 12:24:07,226 - WARNING - Special Case detected for Einstein at index 0
+2026-04-16 12:24:07,226 - INFO - Processing Record 1: J.K. Rowling
+2026-04-16 12:24:07,227 - INFO - Processing Record 2: Albert Einstein
+2026-04-16 12:24:07,227 - WARNING - Special Case detected for Einstein at index 2
+2026-04-16 12:24:07,227 - INFO - Processing Record 3: Jane Austen
+2026-04-16 12:24:07,227 - INFO - Processing Record 4: Marilyn Monroe
+2026-04-16 12:24:07,227 - INFO - Processing Record 5: Albert Einstein
+2026-04-16 12:24:07,228 - WARNING - Special Case detected for Einstein at index 5
+2026-04-16 12:24:07,235 - INFO - Processing Record 6: André Gide
+2026-04-16 12:24:07,235 - INFO - Processing Record 7: Thomas A. Edison
+2026-04-16 12:24:07,235 - INFO - Processing Record 8: Eleanor Roosevelt
+2026-04-16 12:24:07,236 - INFO - Processing Record 9: Steve Martin
+2026-04-16 12:24:09,433 - INFO - Pipeline Shutdown.
