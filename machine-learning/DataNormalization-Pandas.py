@@ -34,3 +34,15 @@ for column in scaled.columns:
 print(scaled)
 scaled.plot(kind='bar')
 plt.show()
+
+
+#z score method
+z_scaled = df.copy()
+
+for column in z_scaled.columns:
+    z_scaled[column] = (z_scaled[column] - z_scaled[column].mean()) / z_scaled[column].std()
+
+print(z_scaled)
+
+z_scaled.plot(kind='bar')
+plt.show()
