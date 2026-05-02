@@ -31,4 +31,4 @@ y_pred = stacked_model.predict(X_test)
 # Evaluate the model (e.g., accuracy for classification)
 from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, y_pred)
-print(f"Stacked Model Accuracy: {accuracy:.4f}")stast
+print(f"Stacked Model Accuracy: {accuracy:.4f}")
