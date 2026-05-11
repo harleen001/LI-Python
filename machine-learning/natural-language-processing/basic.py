@@ -13,3 +13,13 @@ pd.set_option('display.width', 1000)
 text = "language"
 print(text)
 print(3*text)
+
+"language" + "processing"  #concatenation
+
+"L" + text[1:]  #slicing
+
+
+#loop
+texts =  ["natural","language","processing"]
+for text in texts:
+    print("text:",text)
