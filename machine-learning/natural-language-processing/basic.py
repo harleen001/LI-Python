@@ -23,3 +23,20 @@ print(3*text)
 texts =  ["natural","language","processing"]
 for text in texts:
     print("text:",text)
+
+
+for text in texts:
+    print("-", text[0:], sep = "")
+
+
+print(*enumerate(texts))
+for text in enumerate(texts):
+    print(text)
+
+for text in enumerate("texts"):
+    print(text)
+
+text="Natural Language"
+print(text.upper().lower())
+print(text.lower().upper())
+print(text.swapcase())
