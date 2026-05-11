@@ -14,3 +14,12 @@ start, end = span
 print(start, end)  # 0, 15
 substring = txt[start:end]
 print(substring)       # I love to teach
+
+
+#finding all matches in the list
+txt = '''Python is the most beautiful language that a human being has ever created.
+I recommend python for a first programming language'''
+
+# It return a list
+matches = re.findall('language', txt, re.I)
+print(matches)  # ['language', 'language']
