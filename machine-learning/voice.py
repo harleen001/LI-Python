@@ -4,7 +4,8 @@ import speech_recognition as sr
 import yt_dlp
 from pydub import AudioSegment
 
-
+# ─────────────────────────────────────────────
+# NLP: extract keywords from spoken text
 # ─────────────────────────────────────────────
 STOP_WORDS = {
     "play", "search", "find", "i", "want", "to", "listen", "hear",
@@ -17,7 +18,8 @@ def extract_keywords(text: str) -> str:
     keywords = [w for w in words if w not in STOP_WORDS]
     return " ".join(keywords) if keywords else text.lower()
 
-# ───# Page config
+# ─────────────────────────────────────────────
+# Page config
 # ─────────────────────────────────────────────
 st.set_page_config(page_title="🎵 Voice Music", page_icon="🎵", layout="centered")
 
@@ -64,7 +66,7 @@ if audio_input:
     keywords = extract_keywords(spoken_text)
     st.info(f"🔍 Search keywords: **{keywords}**")
 
-    # ── Step 4: Search & stream music ─────────
+    # ── Step 4: Search & stream music + video ─────────
     st.subheader("Step 4 — Searching music...")
     try:
         ydl_opts = {"format": "bestaudio", "noplaylist": True, "quiet": True}
@@ -79,16 +81,36 @@ if audio_input:
         st.error("No results found. Try saying a different song.")
         st.stop()
 
-    title = entries[0]["title"]
-    url   = entries[0]["url"]
+    entry      = entries[0]
+    title      = entry["title"]
+    audio_url  = entry["url"]
+    video_id   = entry.get("id", "")
+    thumbnail  = entry.get("thumbnail", "")
 
     st.success(f"🎶 Found: **{title}**")
 
-    # Download and play
+    # ── Video embed (YouTube iframe) ───────────────────
+    if video_id:
+        st.subheader("🎬 Video")
+        st.markdown(
+            f"""
+            <iframe
+                width="100%" height="400"
+                src="https://www.youtube.com/embed/{video_id}?autoplay=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    # ── Audio-only player ──────────────────────────────
+    st.subheader("🎵 Audio only")
     with st.spinner("Loading audio..."):
         try:
             import requests
-            resp = requests.get(url, timeout=30)
+            resp = requests.get(audio_url, timeout=30)
             resp.raise_for_status()
             st.audio(io.BytesIO(resp.content))
         except Exception as e:
