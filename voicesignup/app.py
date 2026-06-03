@@ -47,7 +47,6 @@ def register_user(username: str, password: str) -> bool:
 
 init_db()
 
-
 st.set_page_config(
     page_title="Sign Up",
     page_icon="🔐",
@@ -182,3 +181,4 @@ if st.button("Create account"):
             st.success(f"Account created for **{username.strip()}**! You can now log in.")
         else:
             st.warning(f"The username **{username.strip()}** is already taken. Please choose a different one.")
+    
