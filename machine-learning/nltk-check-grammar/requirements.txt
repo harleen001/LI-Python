@@ -1,0 +1,4 @@
+streamlit
+rake-nltk
+nltk
+textblob
