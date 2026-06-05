@@ -315,3 +315,6 @@ if speak:
                     st.error("Audio generation failed. Check your internet connection.")
             except Exception as e:
                 st.error(f"Error: {e}\n\nMake sure edge-tts is installed: pip install edge-tts")
+
+
+                #listening to the server but not responding accordingly
